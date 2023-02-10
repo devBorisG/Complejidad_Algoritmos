@@ -27,10 +27,11 @@ def createGameBoard():
 
 def fillGameBoard(n,gameBoard):
     for i in range(n):
-        cond = False
-        while cond == False:
+        cond = True
+        while cond == True:
             row = str(input())
             cond = evaluateCorrectCharacters(row)
+            cond = True
             if cond == False:
                 print("Please enter the correct charactes: '.' or 'A' or 'o'")
         else:
