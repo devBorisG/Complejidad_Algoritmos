@@ -1,17 +1,10 @@
-##orange
-#PREGUNTAR SI LA RESTRICCION DE SALIDA DEL USUARIO ES JUSTO CUANDO ACABE EL JUEGO O SI PUEDE SALIRSE SIN SIQUIERA COMENZAR
-##
-
 ##TIEMPO 4 HORAS
 
 import numpy as np
 
 def main():
-    play = 1
-    while play == 1:
-        gameBoard = createGameBoard()
-        print(theBestWay(gameBoard))
-        play =int(input("Do you want to continue playing?\n1.Yes\n2.No"))
+    gameBoard = createGameBoard()
+    print(theBestWay(gameBoard))
 
 def createGameBoard():
     condition = True
@@ -20,8 +13,6 @@ def createGameBoard():
         if 2 <= n <= 100:
             condition = False
             gameBoard = np.empty((n,n),str)
-        else:
-            print("Please, make sure your input is between 2 and 100.")
     return fillGameBoard(n,gameBoard)
 
 def fillGameBoard(n,gameBoard):
@@ -32,17 +23,15 @@ def fillGameBoard(n,gameBoard):
         while condition == True:
             row = str(input())
             if firstEntry == True and row[0] != '.':
-                    print("Please verify that your first character is '.'.")
+                    continue
             else:
                 if len(row) == n:
                     correctCharacter = evaluateCorrectCharacters(row)
                     if correctCharacter == False:
-                        print("Please enter the correct charactes: '.' or 'A' or 'o',")
+                        continue
                     else:
                         condition = False
                         firstEntry = False
-                else:
-                    print("Please verify your entry, you bust be",n,"characters.")
         else:
             for j in range(n):
                 gameBoard[i][j] = row[j]
