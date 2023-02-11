@@ -1,12 +1,17 @@
-##TIEMPO 4 HORAS
-
 import numpy as np
 
 def main():
+    """Create the Game Board with a function and print an integer that solve de problem
+    """
     gameBoard = createGameBoard()
     print(theBestWay(gameBoard))
 
 def createGameBoard():
+    """Do the Game Board with the 'n' that gives the player
+    
+    Returns:
+        array: returns a function that insed it contains an array with the game board filled correctly
+    """
     condition = True
     while condition == True:
         n = int(input())
@@ -16,6 +21,16 @@ def createGameBoard():
     return fillGameBoard(n,gameBoard)
 
 def fillGameBoard(n,gameBoard):
+    """The player sets each row of characters and this functions evaluates if
+    it has the correct legth, characters allowed and if the first entry starts with '.'
+
+    Args:
+        n (int): Contains the number entered by the player
+        gameBoard (array): Contains empty but structured Game Board 
+
+    Returns:
+        array: Returns the Game Board filled with the player's specifications
+    """
     firstEntry = True
     for i in range(n):
         correctCharacter = True
@@ -38,6 +53,15 @@ def fillGameBoard(n,gameBoard):
     return gameBoard
 
 def evaluateCorrectCharacters(value):
+    """Evaluate that the player's entries contain the allowed characters
+
+    Args:
+        value (str): Contains the row of characters entered by the player that can be part of the Game Board
+
+    Returns:
+        bool: Give the answer to the evaluation, being 'False' that it does not belong to the allowed characters and
+        'True' that it does belong to them
+    """
     condition = True
     empty = '.'
     ghost = 'A'
@@ -49,6 +73,15 @@ def evaluateCorrectCharacters(value):
     return condition
 
 def theBestWay(gameBoard):
+    """analyzes the best result the player can obtain by going through the array and getting as many
+    points as possible before encountering a ghost
+
+    Args:
+        gameBoard (array): Contains the Game Board already filled with the data provided by the player
+
+    Returns:
+        int: Returns the number of the maximum amount of meal pacman can have
+    """
     count = 0
     aux = 0
     item = ''
