@@ -33,20 +33,14 @@ def fillGameBoard(n,gameBoard):
     """
     firstEntry = True
     for i in range(n):
-        correctCharacter = True
         condition = True
         while condition == True:
             row = str(input())
             if firstEntry == True and row[0] != '.':
                     continue
-            else:
-                if len(row) == n:
-                    correctCharacter = evaluateCorrectCharacters(row)
-                    if correctCharacter == False:
-                        continue
-                    else:
-                        condition = False
-                        firstEntry = False
+            elif len(row) == n and evaluateCorrectCharacters(row):
+                condition = False
+                firstEntry = False
         else:
             for j in range(n):
                 gameBoard[i][j] = row[j]
@@ -63,13 +57,8 @@ def evaluateCorrectCharacters(value):
         'True' that it does belong to them
     """
     condition = True
-    empty = '.'
-    ghost = 'A'
-    meal = 'o'
     for i in range(len(value)):
-        if condition == True:
-            if value[i] != empty and value[i] != ghost and value[i] != meal: condition = False
-            else: condition = True
+        if condition and value[i] != '.' and value[i] != 'A' and value[i] != 'o': condition = False
     return condition
 
 def theBestWay(gameBoard):
@@ -92,7 +81,6 @@ def theBestWay(gameBoard):
                 item = gameBoard[i][j]
             else:
                 item = gameBoard[i][n-1-j]
-            
             if item == 'A':
                 if aux < count:
                     aux = count    
@@ -102,6 +90,6 @@ def theBestWay(gameBoard):
     if aux < count:
         aux = count
     return aux
-            
+
 if __name__ == "__main__":
     main()
