@@ -1,5 +1,3 @@
-import numpy as np
-
 def main():
     """Create the Game Board with a function and print an integer that solve de problem
     """
@@ -17,7 +15,7 @@ def createGameBoard():
         n = int(input())
         if 2 <= n <= 100:
             condition = False
-            gameBoard = np.empty((n,n),str)
+            gameBoard = [list(range(n)) for _ in range(n)]
     return fillGameBoard(n,gameBoard)
 
 def fillGameBoard(n,gameBoard):
