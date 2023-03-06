@@ -5,12 +5,46 @@
 # se necesita uan varible adicional "c"
 
 def main():
-    t = int(input)
-    firstLine = int(input)
-    secondLine = int(input)
-    for i in range(t+1):
-        variateThemp(firstLine[0],firstLine[1],firstLine[2],secondLine[0],secondLine[1])
+    t = int(input())
+    
+    
+    for i in range(t):
+        l = int(input())
+        r = int(input())
+        x = int(input())
+        a = int(input())
+        b = int(input())
+        print(variateThemp(l, r, x, a, b))
+    
     
 def variateThemp(l,r,x,a,b):
-    print(l,r,x,a,b)
+    c = 0
+    cont = 0
+    while a!=b:
+        if abs(a-b)>=x:
+            cont+=1
+        elif a>b:
+            if cont == 0:
+                a = a - x
+                cont += 1
+            else:
+                while a != b:
+                    a = a + 1
+                else:
+                    cont += 1
+        elif a<b:
+            c = a + x
+            a = c
+            cont += 1
+            while a != b:
+                a = a - 1
+            else:
+                cont += 1
+        else:
+            cont = -1
     
+    return cont
+    
+    
+if __name__ == "__main__":
+    main()
