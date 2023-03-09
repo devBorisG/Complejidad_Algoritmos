@@ -23,17 +23,20 @@ def main():
 
 
 def variateThemp(l,r,x,a,b):
-    """_summary_
+    """It makes 4 important comparisons, first to know if the temperatures a and b are equal, second to know if 
+    the subtraction between these two is greater than x which would mean that a movement can be made, the other 
+    two comparisons are playing with l, r, a, b always comparing with x to know if it makes 2 or 3 movements.
+    If it does not pass through any of the 4 filters it means that it is impossible. 
 
     Args:
-        l (_type_): _description_
-        r (_type_): _description_
-        x (_type_): _description_
-        a (_type_): _description_
-        b (_type_): _description_
+        l (int): represents the lower limit of the thermostat
+        r (int): represents the upper limit of the thermostat
+        x (int): represents the minimum number of movements
+        a (int): represents the initial temperature of the thermostat
+        b (int): represents the final temperature of the thermostat
 
     Returns:
-        _type_: _description_
+        int: number of movements required
     """
     cont = 0
     if a == b:
