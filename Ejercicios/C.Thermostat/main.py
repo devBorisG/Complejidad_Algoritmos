@@ -1,4 +1,8 @@
 def main():
+    """Input the numbers of cases, then Input the first line that constains the limits 'l' and 'r'
+    and the minimum number of movements that can be made. Then the second line contains the initial
+    temperature 'a' and final temperature 'b'; calls the function that returns the minimum number of steps to reach 'b'
+    """
     condition = True
     while condition == True:
         t = int(input())
@@ -19,6 +23,18 @@ def main():
 
 
 def variateThemp(l,r,x,a,b):
+    """_summary_
+
+    Args:
+        l (_type_): _description_
+        r (_type_): _description_
+        x (_type_): _description_
+        a (_type_): _description_
+        b (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     cont = 0
     if a == b:
         pass
