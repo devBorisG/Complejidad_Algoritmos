@@ -9,4 +9,6 @@ y todo el seguimiento del analisis de cada ejercicio.
 
 2. [Voltereta](https://github.com/devBorisG/Complejidad_Algoritmos/tree/main/Ejercicios/Voltereta) (Falta documentacion)
 
-3. [C.Thermostat](https://github.com/devBorisG/Complejidad_Algoritmos/tree/main/Ejercicios/C.Thermostat) (Incompleto)
+3. [C.Thermostat](https://github.com/devBorisG/Complejidad_Algoritmos/tree/main/Ejercicios/C.Thermostat) (Falta documentacion)
+
+4. [C.Thermostat](https://github.com/devBorisG/Complejidad_Algoritmos/tree/main/Ejercicios/Angry%20Ducks) (Falta documentacion)
