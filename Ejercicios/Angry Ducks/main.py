@@ -45,7 +45,9 @@ def calculate_attack(h, p1, p2, alpha, v):
         float: distance where the duck fell
     """
     alpha = alpha*pi/180
-    d = (v*math.cos(alpha)*(v*math.sin(alpha)+math.sqrt((v*math.sin(alpha))**2+(2*g*h))))/g
+    vx = v*math.cos(alpha)
+    vy = v*math.sin(alpha)
+    d = (vx*(vy+math.sqrt((vy)**2+(2*g*h))))/g
     
     if p1<=d<=p2:
         return str("{:.5f}".format(d))+" -> DUCK"
